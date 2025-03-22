@@ -1,0 +1,68 @@
+{
+  "name": "pomelo-gpt",
+  "version": "1.0.0",
+  "description": "A ChatGPT-like desktop client built with Electron and Vue",
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "electron:dev": "cross-env NODE_ENV=development electron .",
+    "electron:build": "vue-tsc && vite build && tsc -p electron/tsconfig.json && electron-builder",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "format": "prettier --write src/",
+    "format:check": "prettier --check src/"
+  },
+  "keywords": [
+    "electron",
+    "vue",
+    "chatgpt"
+  ],
+  "author": "",
+  "license": "ISC",
+  "build": {
+    "appId": "com.pomelo.gpt",
+    "productName": "Pomelo GPT",
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "icon": "build/icon.icns"
+    },
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*"
+    ]
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.4",
+    "@types/node": "^22.13.10",
+    "@vitejs/plugin-vue": "^5.2.3",
+    "autoprefixer": "^10.4.21",
+    "cross-env": "^7.0.3",
+    "dmg-builder": "25.1.8",
+    "electron": "^35.0.3",
+    "electron-builder": "^25.1.8",
+    "electron-builder-squirrel-windows": "25.1.8",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.2",
+    "vue": "^3.5.13",
+    "vue-tsc": "^2.2.8"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "@types/dompurify": "^3.2.0",
+    "axios": "^1.8.4",
+    "dompurify": "^3.2.4",
+    "element-plus": "^2.9.6",
+    "highlight.js": "^11.11.1",
+    "marked": "^15.0.7"
+  }
+}
