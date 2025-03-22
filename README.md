@@ -2,8 +2,6 @@
 
 一个基于Electron和Vue 3的跨平台AI聊天应用，支持多种大语言模型和多语言界面。
 
-![Pomelo GPT](https://github.com/raoanqi/pomelo-gpt/raw/main/screenshots/app-preview.png)
-
 ## 功能特点
 
 - 🚀 使用Vue 3 + TypeScript + Electron构建
