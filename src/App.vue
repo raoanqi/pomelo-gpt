@@ -61,7 +61,7 @@
     <div class="input-container">
       <div class="input-wrapper">
         <el-input v-model="inputMessage" type="textarea" :rows="3" :placeholder="t('typePlaceholder')" clearable
-          @keyup.enter.ctrl="sendMessage" ref="inputRef" :disabled="isLoading" resize="none" />
+          @keydown.enter="handleEnterKey" ref="inputRef" :disabled="isLoading" resize="none" />
         <!-- 独立的发送按钮 -->
         <el-button type="primary" @click="sendMessage" :loading="isLoading" :disabled="isLoading" class="send-button">
           <template v-if="!isLoading">
@@ -156,6 +156,18 @@ const saveSettings = (newSettings: ChatSettings & { language: string }) => {
     temperature: settings.temperature,
     maxTokens: settings.maxTokens
   }))
+}
+
+// 处理回车键
+const handleEnterKey = (event: KeyboardEvent) => {
+  // Shift + Enter: 换行（默认行为，不阻止）
+  if (event.shiftKey) {
+    return
+  }
+  
+  // 单独 Enter: 发送消息
+  event.preventDefault()
+  sendMessage()
 }
 
 // 发送消息

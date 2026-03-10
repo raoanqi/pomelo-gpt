@@ -76,7 +76,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, reactive } from 'vue'
+import { computed, ref, reactive, watch } from 'vue'
 import { ElMessage } from 'element-plus'
 import { ChatSettings } from '../services/api'
 import { Language, translate } from '../i18n'
@@ -98,6 +98,14 @@ const emit = defineEmits<{
 // 本地响应式变量
 const activeTab = ref('api')
 const localSettings = reactive({ ...props.settings })
+
+// 监听对话框打开，同步最新的设置
+watch(() => props.modelValue, (newValue) => {
+  if (newValue) {
+    // 对话框打开时，同步最新的设置到 localSettings
+    Object.assign(localSettings, props.settings)
+  }
+})
 
 // 计算对话框可见性
 const dialogVisible = computed({

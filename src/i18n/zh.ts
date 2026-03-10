@@ -36,7 +36,7 @@ export default {
   cancel: '取消',
   welcomeMessage: '欢迎使用Pomelo GPT，我可以帮助你回答问题、提供信息或进行创意对话。',
   startChat: '开始聊天',
-  typePlaceholder: '输入消息，按Ctrl+Enter发送',
+  typePlaceholder: '输入消息，按Enter发送',
   thinking: '思考中...',
   send: '发送',
   errors: {

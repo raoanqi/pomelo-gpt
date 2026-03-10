@@ -38,7 +38,7 @@ export default {
   welcomeMessage:
     'Welcome to Pomelo GPT. I can help you answer questions, provide information, or engage in creative conversations.',
   startChat: 'Start Chat',
-  typePlaceholder: 'Type a message, press Ctrl+Enter to send',
+  typePlaceholder: 'Type a message, press Enter to send',
   thinking: 'Thinking...',
   send: 'Send',
   errors: {
